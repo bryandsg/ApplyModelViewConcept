@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ViewmodelLifecycle</string>
+    <string name="tile_screen_counter">contador</string>
+    <string name="click">click</string>
+    <string name="data">dados</string>
+    <string name="show">show</string>
+</resources>
