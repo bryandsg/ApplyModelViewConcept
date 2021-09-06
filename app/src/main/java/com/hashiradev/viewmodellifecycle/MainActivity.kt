@@ -2,6 +2,7 @@ package com.hashiradev.viewmodellifecycle
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -17,11 +18,41 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        logger(msg ="Creating...")
 
         initData()
         initCounter()
         initListenerClick()
         validateCounter()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        logger(msg ="Starting...")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        logger(msg ="Resuming...")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        logger(msg ="Pausing...")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        logger(msg ="Stopping...")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        logger(msg ="Destroing...")
+    }
+
+    private fun logger(tag:String = "LIFE_CYCLE", msg: String ) {
+        Log.d(tag, "logger: $msg")
     }
 
     private fun validateCounter() {
